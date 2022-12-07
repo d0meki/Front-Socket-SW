@@ -28,7 +28,13 @@ export const AuthContextProvider = ({ children }) => {
         callback(false);
 
         const { data } = res;
+        // const usuario = {
+        //     _id: data._id,
+        //     name: data.name,
+        //     email: data.email
+        // }
 
+      //  localStorage.setItem("keyID", JSON.stringify( data._i,data.name,data.email ));
         localStorage.setItem("keyID", btoa(JSON.stringify({ id: data._id })));
 
         dispatch({
@@ -57,8 +63,9 @@ export const AuthContextProvider = ({ children }) => {
         callback(false);
 
         const { data } = res;
-
-        localStorage.setItem("keyID", btoa(JSON.stringify({ id: data._id })));
+        
+        localStorage.setItem("keyID", JSON.stringify({ id: data._id }));
+      //  localStorage.setItem("keyID", btoa(JSON.stringify({ id: data._id })));
 
         dispatch({
             type: types.authLogin,

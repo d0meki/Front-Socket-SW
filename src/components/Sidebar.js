@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import imPerson from '../assets/image/person.png';
 import imContainer from '../assets/image/container.png';
 import imDB from '../assets/image/DB.png';
@@ -21,7 +21,7 @@ const Sidebar = (props) => {
     return (
         <div className="flex-shrink-0 p-3 bg-dark vh100 sidebar" style={show ? { left: "0" } : { left: "-300px" }}>
 
-            <Link to={"/"} className='d-block text-center text-decoration-none fs-4 text-white pointer'>C4 Diagramas</Link>
+            {/* <Link to={"/"} className='d-block text-center text-decoration-none fs-4 text-white pointer'>C4 Diagramas</Link> */}
 
             <hr className='border border-white' />
 
@@ -29,7 +29,7 @@ const Sidebar = (props) => {
                 <option value="Container" >Container C4</option>
                 <option value="Component">Componente C4</option>
             </select>
-
+            
 
             {
                 (nivel === "Container")

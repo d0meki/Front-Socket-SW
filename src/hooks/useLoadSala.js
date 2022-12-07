@@ -37,7 +37,7 @@ export const useLoadSala = (idUser) => {
 
     useEffect(() => {
         LoadSala();
-    }, []);
+    },);
 
     return {
         salas,

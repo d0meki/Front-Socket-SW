@@ -1,10 +1,6 @@
 import { Api } from "../const/api";
 
 export const apiDiagrama = (endpoint, method = "GET", data = null) => {
-
-    console.log(method);
-    console.log(endpoint);
-    console.log(data);
     if (data) {
         return fetch(Api.url + endpoint, {
             method,

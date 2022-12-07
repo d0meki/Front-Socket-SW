@@ -23,6 +23,9 @@ const List = (props) => {
     }
 
     return (
+        
+
+
         <div className='col-md-9 p-1 section overflow-auto'>
             <div className='container-fluid'>
                 <table className='text-black-50 table table-striped text-center text-white'>
