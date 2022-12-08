@@ -10,13 +10,16 @@ import pako from "pako";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../../components/Sidebar";
+import GridComponent from "../../components/GridComponent";
 import Modal from "../../components/Modal";
 import { textEncode } from "../../helpers/helpers";
 import { useSala } from "../../hooks/useSala";
 import { apiDiagrama } from "../../api/apiDiagrama";
 import socketContext from "../../context/socketContext";
 import { useDiagrama } from "../../hooks/useDiagrama";
-
+import { AiFillSave, AiOutlineDownload } from "react-icons/ai";
+import { BsFillEraserFill } from "react-icons/bs";
+import { SlActionUndo } from "react-icons/sl";
 const BoardPage = () => {
   const history = useHistory();
   const { socket } = useContext(socketContext);
@@ -273,27 +276,28 @@ const BoardPage = () => {
 
   return (
     <>
-      <Sidebar
-        show={showbar}
-        HandleTypeModal={HandleTypeModal}
-        HandleTypeDiagram={HandleTypeDiagram}
-      />
-
       <div className="container-fluid">
         <header className="row border">
           <div className="col-md-11">
-          <span> {usuarios.name} - {usuarios.email} </span> 
-                   <h2 className="text-center"> ----C4----  |  ----Diagrama----</h2> 
+            <span>
+              {" "}
+              {usuarios.name} - {usuarios.email}{" "}
+            </span>
+            <h2 className="text-center"> ----C4---- | ----Diagrama----</h2>
           </div>
-          
-          <div className="col-md-1 text-center my-auto">
-          
+          <GridComponent
+            show={showbar}
+            HandleTypeModal={HandleTypeModal}
+            HandleTypeDiagram={HandleTypeDiagram}
+          />
+
+          {/* <div className="col-md-1 text-center my-auto">
             <FontAwesomeIcon
               icon={faBars}
               className="pointer"
               onClick={() => setShowbar(!showbar)}
             />
-          </div>
+          </div> */}
         </header>
 
         <section className="row mt-3">
@@ -311,24 +315,27 @@ const BoardPage = () => {
               <>
                 <button
                   onClick={HandleSaveBoard}
-                  className="btn btn-primary mx-1"
+                  className="btn btn-success mx-1"
+                  title="Guardar"
                 >
-                  Guardar
+                  <AiFillSave></AiFillSave>
                 </button>
                 <button
                   onClick={HandleBorraBoard}
                   className="btn btn-danger mx-1"
+                  title="Borrar"
                 >
-                  Borrar
+                  <BsFillEraserFill></BsFillEraserFill>
                 </button>
                 <button
                   onClick={HandleClickDowload}
-                  className="btn btn-success mx-1"
+                  className="btn btn-primary mx-1"
+                  title="Descargar"
                 >
-                  Imprimir
+                  <AiOutlineDownload></AiOutlineDownload>
                 </button>
-                <button onClick={FinalizarRoom} className="btn btn-dark mx-1">
-                  Finalizar reunion
+                <button onClick={FinalizarRoom} className="btn bg-warning mx-1">
+                  Terminar reunion - <SlActionUndo></SlActionUndo>
                 </button>
               </>
             ) : (

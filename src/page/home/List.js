@@ -31,7 +31,7 @@ const List = (props) => {
                 <table className='text-black-50 table table-striped text-center text-white'>
                     <thead>
                         <tr>
-                            <th>id</th>
+                            <th>el Id</th>
                             <th>name</th>
                             <th>estado</th>
                             <th>eliminar</th>
@@ -47,10 +47,10 @@ const List = (props) => {
                                     {
                                         sala.active
                                             ? <th><Link to={`/board/${sala._id}`} className='btn btn-success'>ir a sala</Link></th>
-                                            : <th><button onClick={(e) => HandleActiveSala(sala._id)} className='btn btn-primary'>activate</button></th>
+                                            : <th><button onClick={(e) => HandleActiveSala(sala._id)} className='btn btn-primary'>activar</button></th>
                                     }
                                     <th>
-                                        <button onClick={(e) => HandleClickEliminar(sala._id)} className='btn btn-danger'>eliminar</button>
+                                        <button onClick={(e) => HandleClickEliminar(sala._id)} className='btn btn-danger ml-2'>eliminar</button>
                                     </th>
                                 </tr>
 

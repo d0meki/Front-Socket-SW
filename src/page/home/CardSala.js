@@ -48,7 +48,7 @@ const CardSala = (props) => {
                   onClick={(e) => HandleActiveSala(sala._id)}
                   className="btn btn-primary mr-2"
                 >
-                  activate
+                  activar
                 </button>
               )}
               <button

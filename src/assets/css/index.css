@@ -39,7 +39,8 @@ list-unstyled ps-0 my-3 content-sidebar overflow-auto sidebar-scroll
 }
 
 .sidebar {
-    position: fixed;
+   /* position: fixed;*/
+   display: flex;
     width: 300px;
     left: 0;
     transition: all .5s
@@ -50,7 +51,8 @@ list-unstyled ps-0 my-3 content-sidebar overflow-auto sidebar-scroll
 }
 
 .content-sidebar {
-    height: 500px
+    /* height: 500px */
+    width: 100%;
 }
 
 .menu {
@@ -70,5 +72,11 @@ list-unstyled ps-0 my-3 content-sidebar overflow-auto sidebar-scroll
     width: 8px;
     background-color: #ccc;
     border-radius: 10px
+}
+
+.sidebardos{
+    display: flex;
+    justify-content: space-evenly;
+    list-style:none;
 }
 
