@@ -52,6 +52,7 @@ const HomePage = () => {
   const HandleSolicitudSala = (e) => {
     e.preventDefault();
     socket.emit("solicitud-sala", { idSala, nameUser: auth.name, idUser: id });
+
   };
 
   const [usuarios, setUsuarios ] = useState([]);
@@ -144,7 +145,7 @@ const HomePage = () => {
                   />
                 </div>
                 <div className="col-md-10 mx-auto my-2">
-                  <button className="btn btn-dark">
+                  <button className="btn btn-dark" data-bs-dismiss="modal">
                     Unirse - <TbArrowsJoin></TbArrowsJoin>{" "}
                   </button>
                 </div>

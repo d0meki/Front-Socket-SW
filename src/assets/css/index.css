@@ -8,7 +8,7 @@ list-unstyled ps-0 my-3 content-sidebar overflow-auto sidebar-scroll
 
 .bg-custom {
     /* aqui manejo el fondo*/
-    background-image: linear-gradient(to right, #243949 0, #517fa4 100%);
+    /* background-image: linear-gradient(to right, #243949 0, #517fa4 100%); */
     color: #fff
 }
 
